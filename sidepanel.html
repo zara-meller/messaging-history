@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Messaging History</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <span class="kicker">messaging history</span>
+      <button class="icon-btn" id="refresh" title="Re-check the archive" aria-label="Re-check the archive">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="title-wrap">
+      <span class="cond site-name" id="site-name">Competitors</span>
+      <span class="site-sub" id="site-sub">their story over time</span>
+    </div>
+    <div class="controls">
+      <form id="lookup" class="lookup" autocomplete="off">
+        <input id="domain" type="text" placeholder="any domain, e.g. notion.so" spellcheck="false" aria-label="Domain to analyze">
+      </form>
+      <select id="range" aria-label="Period">
+        <option value="12">1 year</option>
+        <option value="24">2 years</option>
+        <option value="36">3 years</option>
+      </select>
+    </div>
+    <label class="toggle"><input type="checkbox" id="with-meta"> count meta-description edits as changes</label>
+  </header>
+
+  <div class="progress" id="progress" hidden>
+    <div class="progress-bar"><span id="progress-fill"></span></div>
+    <div class="progress-text" id="progress-text"></div>
+  </div>
+
+  <main id="main"></main>
+
+  <footer class="bottom" id="footer" hidden>
+    <button id="copy-md">Copy as Markdown</button>
+    <button id="download-csv">Download CSV</button>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>
