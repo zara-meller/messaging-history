@@ -8,7 +8,7 @@ Free to run: the data comes from the Internet Archive's Wayback Machine. There i
 
 1. Open `chrome://extensions`.
 2. Turn on **Developer mode** (top right).
-3. Click **Load unpacked** and pick this folder (`messaging-history-extension`).
+3. Click **Load unpacked** and pick this folder (`messaging-history`).
 4. Pin the icon (puzzle piece → pin).
 5. Open any competitor's homepage and click the icon.
 
@@ -36,4 +36,4 @@ Free to run: the data comes from the Internet Archive's Wayback Machine. There i
 - `lib/extract.js`: finds headline, subheadline and CTAs in a page
 - `lib/wayback.js`: archive requests, pacing, back-off
 - `lib/diff.js`, `lib/eras.js`: word diff and grouping months into eras
-- `fonts/`: Geist (SIL Open Font License)
+- `fonts/`: Geist (SIL Open Font License, see `fonts/OFL.txt`)
