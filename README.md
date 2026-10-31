@@ -4,6 +4,8 @@ A Chrome extension. Open a competitor's homepage, click the icon, and a side pan
 
 Free to run: the data comes from the Internet Archive's Wayback Machine. There is no server and no API key.
 
+![Messaging History side panel showing notion.com's homepage changes](screenshots/store-screenshot-1.png)
+
 ## Install (developer mode)
 
 1. Open `chrome://extensions`.
@@ -23,6 +25,14 @@ Free to run: the data comes from the Internet Archive's Wayback Machine. There i
 - A message seen in one month only, or one that comes back later, is marked as a likely test, with a sentence explaining why.
 - Export: **Copy as Markdown** (for a doc or Slack) or **Download CSV** (every capture read).
 
+## Screenshots
+
+![Timeline of dated headline cards](screenshots/store-screenshot-2.png)
+
+![What changed, first vs now](screenshots/store-screenshot-3.png)
+
+Example data: notion.com, from the Wayback Machine.
+
 ## Limits
 
 - Sites that draw everything with JavaScript save almost empty HTML. For those, the panel falls back to the og:title or the page title.
@@ -37,3 +47,8 @@ Free to run: the data comes from the Internet Archive's Wayback Machine. There i
 - `lib/wayback.js`: archive requests, pacing, back-off
 - `lib/diff.js`, `lib/eras.js`: word diff and grouping months into eras
 - `fonts/`: Geist (SIL Open Font License, see `fonts/OFL.txt`)
+- `screenshots/`: Chrome Web Store images
+
+## Privacy
+
+No server, no tracking. The only request goes to web.archive.org. See [PRIVACY.md](PRIVACY.md).
