@@ -274,17 +274,17 @@ function renderHeader() {
   }
 }
 
-// Domain as one line of condensed caps, as big as the panel width allows.
+// Domain as one line of gradient display type, as big as the panel width allows.
 function fitTitle() {
   const el = $('#site-name');
-  const max = 64;
+  const max = 46;
   el.style.fontSize = `${max}px`;
   const room = el.parentElement.clientWidth;
-  const width = el.getBoundingClientRect().width; // includes the scaleX narrowing
+  const width = el.getBoundingClientRect().width;
   if (width > room) el.style.fontSize = `${Math.max(24, Math.floor((max * room) / width))}px`;
 }
 
-const eraColor = (i) => (i % 2 ? 'var(--black)' : 'var(--red)');
+const eraColor = (i) => (i % 2 ? 'var(--era-b)' : 'var(--era-a)');
 
 function renderStrip(eras) {
   const start = new Date();
@@ -318,7 +318,7 @@ function renderStrip(eras) {
 function renderEra(era, prev, index, isNewest) {
   const d = era.data;
   const { labels, rewrite } = changeInfo(prev, era);
-  const color = era.kind === 'live' ? 'var(--red)' : eraColor(index);
+  const color = era.kind === 'live' ? 'var(--era-a)' : eraColor(index);
 
   let when;
   if (era.kind === 'live') when = 'Live now';
@@ -374,7 +374,7 @@ function renderEra(era, prev, index, isNewest) {
         ? field('Line under the headline', h('p', { class: 'sub' }, diffNodes(prev?.data.subheadline, d.subheadline, true)))
         : null,
       d.ctas?.length
-        ? field(prev ? 'Buttons (red = new this period)' : 'Buttons',
+        ? field(prev ? 'Buttons (pink = new this period)' : 'Buttons',
           h('div', { class: 'chips' }, d.ctas.map((c) => h('span', { class: `chip${prev && !prevCtas.has(c.toLowerCase()) ? ' new' : ''}` }, c))))
         : null,
       d.proof ? field('Proof they show', h('p', { class: 'sub' }, diffNodes(prev?.data.proof, d.proof, true))) : null,
@@ -489,7 +489,7 @@ function render() {
 
   main.append(h('div', { class: 'section-title' }, 'Timeline'),
     h('p', { class: 'legend' },
-      'Each card is compared with the one below it: ', h('ins', {}, 'red'), ' = new words, ', h('del', {}, 'struck out'), ' = removed.'));
+      'Each card is compared with the one below it: ', h('ins', {}, 'pink'), ' = new words, ', h('del', {}, 'struck out'), ' = removed.'));
 
   const list = h('ol', { class: 'timeline' });
   for (let i = eras.length - 1; i >= 0; i--) {

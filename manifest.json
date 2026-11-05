@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Messaging History",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "One click on a competitor's homepage shows how their headline and positioning changed over the last two years.",
   "minimum_chrome_version": "116",
   "action": {

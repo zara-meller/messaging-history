@@ -37,7 +37,6 @@ Example data: notion.com, from the Wayback Machine.
 
 - Sites that draw everything with JavaScript save almost empty HTML. For those, the panel falls back to the og:title or the page title.
 - A short A/B test between two sampled months can be missed.
-- Titles use Helvetica Neue Condensed Bold, which every Mac has. Other systems fall back to Arial Narrow.
 
 ## Files
 
